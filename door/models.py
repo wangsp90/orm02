@@ -6,7 +6,8 @@ class article(models.Model):
 	CONTENT=models.TextField()
 	class Meta:
 		db_table='article'
-			
+		
+
 
 
 
