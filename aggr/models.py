@@ -15,13 +15,13 @@ class book(models.Model):
 	NAME=models.CharField(null=False,max_length=255)
 	PRICE=models.FloatField()
 	COUNTRY=models.CharField(max_length=255)
-	AUTHOR=models.ForeignKey(author,on_delete=models.CASCADE)
-	PUBLISHER=models.ForeignKey(publisher,on_delete=models.CASCADE)
+	AUTHOR=models.ForeignKey("author",on_delete=models.CASCADE)
+	PUBLISHER=models.ForeignKey("publisher",on_delete=models.CASCADE)
 	class Meta:
 		db_table='book'		
 
 class order(models.Model):
-	NAME=models.CharField(null=False,max_length=255)
+	NAME=models.ForeignKey("book",on_delete=models.CASCADE)
 	PRICE=models.FloatField()
 	class Meta:
 		db_table='order'
