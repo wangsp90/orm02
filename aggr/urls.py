@@ -21,5 +21,5 @@ from . import views
 urlpatterns = [
 #    path('admin/', admin.site.urls),
 	path('avg/', views.avg,name='avg'),
-
+	path('queryset/', views.queryset,name='queryset'),
 ]
