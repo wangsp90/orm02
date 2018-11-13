@@ -22,4 +22,5 @@ urlpatterns = [
 #    path('admin/', admin.site.urls),
 	path('avg/', views.avg,name='avg'),
 	path('queryset/', views.queryset,name='queryset'),
+	path('orderby/', views.orderby,name='orderby'),
 ]

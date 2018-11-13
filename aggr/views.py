@@ -33,3 +33,18 @@ def queryset(request):
 		print ("《%s》%s" % (b.NAME,b.author))
 
 	return HttpResponse("success!")
+
+def orderby(request):
+	#根据价格从小到大排序
+	book04=book.objects.order_by("PRICE")
+	for b in book04:
+		print ("%s/%s" % (b.NAME,b.PRICE))
+	#根据价格从大到小排序
+	book05=book.objects.order_by("-PRICE")
+	for b in book05:
+		print ("%s/%s" % (b.NAME,b.PRICE))
+	#根据book表中的PRICE排序
+	od=order.objects.order_by("NAME__PRICE")
+	for o in od:
+		print ("%s/%s" % (o.NAME.NAME,o.PRICE))	
+	return HttpResponse("Good!")
